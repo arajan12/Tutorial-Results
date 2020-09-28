@@ -1,0 +1,22 @@
+var url = "https://api.bigcommerce.com/stores/vrwd1ks1u1/v3/catalog/products/111";
+
+var xhr = new XMLHttpRequest();
+xhr.open("PUT", url);
+
+xhr.setRequestHeader("Accept", "application/json");
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader("X-Auth-Client", "tdbt827vwhgruvzsa38tedqjzzz39m3");
+xhr.setRequestHeader("X-Auth-Token", "j33q1um60ulaz7y93tvr0unxx2j3yjo");
+xhr.setRequestHeader("Authorization", "Bearer j33q1um60ulaz7y93tvr0unxx2j3yjo");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+var data = `{
+  "price": 12.99
+}`;
+
+xhr.send(data);
